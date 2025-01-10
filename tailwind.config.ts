@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    container: {
+      center: true,
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 } satisfies Config;
