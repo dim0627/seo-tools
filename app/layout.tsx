@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const notoSans = Noto_Sans({
   variable: "--font-geist-sans",
@@ -20,9 +21,25 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSans.variable} antialiased`}>
-        <header className="py-2">
+        <header className="py-4">
           <div className="container">
-            <span className="font-semibold">SEO TOOLS</span>
+            <div className="flex justify-between items-center">
+              <Link href="/" className="text-2xl text-slate-300 font-semibold">
+                SEO TOOLS
+              </Link>
+              <ul className="flex gap-4">
+                <li>
+                  <Link href="/" className="underline">
+                    重複
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/combination" className="underline">
+                    組み合わせ
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </header>
         {children}
